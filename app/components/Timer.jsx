@@ -4,8 +4,8 @@ var Clock = require('Clock');
 var Timer = React.createClass({
   render: function(){
     return (
-      <div className="row">
-        <div className="small-centered middle-6 large-4">
+      <div>
+        <div>
           <Clock totalSeconds={0}/>
         </div>
       </div>

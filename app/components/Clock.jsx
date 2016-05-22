@@ -1,4 +1,4 @@
-var React = require ('react');
+var React = require('react');
 
 var Clock = React.createClass({
   getDefaultProps: function () {
@@ -8,21 +8,23 @@ var Clock = React.createClass({
     totalSeconds: React.PropTypes.number
   },
   formatSeconds: function (totalSeconds) {
-    //if I pass 61, min: 1, sec 1
-    var seconds = totalSeconds % 60; //mod de 60
-    var minutes = Math.floor(totalSeconds / 60); // take a number with decimals and return the hole number
+    var seconds = totalSeconds % 60;
+    var minutes = Math.floor(totalSeconds / 60);
 
-    if (seconds < 10 ) {
+    if (seconds < 10) {
       seconds = '0' + seconds;
     }
+
     if (minutes < 10) {
       minutes = '0' + minutes;
     }
+
     return minutes + ':' + seconds;
   },
-  render: function() {
+  render: function () {
     var {totalSeconds} = this.props;
-    return(
+
+    return (
       <div className="clock">
         <span className="clock-text">
           {this.formatSeconds(totalSeconds)}
